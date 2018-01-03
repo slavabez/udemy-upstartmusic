@@ -33,9 +33,8 @@ function buildQuiery(criteria){
     const searchQuery = {};
 
     if (criteria.name) {
-        searchQuery.name = {
-            $regex: criteria.name,
-            $options: "i"
+        searchQuery.$text = {
+            $search: criteria.name
         };
     }
 
