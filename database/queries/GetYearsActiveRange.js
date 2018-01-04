@@ -18,6 +18,9 @@ module.exports = () => {
         .limit(1)
         .then(artists => artists[0].yearsActive);
 
+    console.log('Yo');
+
+
     return Promise.all([minQuery, maxQuery])
         .then(result => {
             return {

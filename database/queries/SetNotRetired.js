@@ -6,10 +6,9 @@ const Artist = require('../models/artist');
  * @return {promise} A promise that resolves after the update
  */
 module.exports = (_ids) => {
-
+    console.log('Clicked');
     return Artist.update(
-        {
-            // Find criteria
+        {// Find criteria
             _id: {
                 $in: _ids
             }
@@ -19,6 +18,7 @@ module.exports = (_ids) => {
             retired: false
         },
         {
+            // Enable the multi option so that MongoDB knows to update all not just the first one
             multi: true
         });
 
